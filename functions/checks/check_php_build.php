@@ -40,11 +40,6 @@ if (function_exists("apache_get_modules")) {
     }
 }
 
-# check for PEAR functions
-if ((@include_once 'PEAR.php') != true) {
-	$missingExt[] = "php PEAR support";
-}
-
 # if any extension is missing print error and die!
 if (sizeof($missingExt) != 1 || (phpversion() < "5.4") || PHP_INT_SIZE==4) {
 
